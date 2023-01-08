@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/FourMenCoffee/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.255" />
+        <entry key="..\:/FourMenCoffee/app/src/main/res/drawable/button_background_blue.xml" value="0.255" />
+        <entry key="..\:/FourMenCoffee/app/src/main/res/drawable/cafe.xml" value="0.1165" />
+        <entry key="..\:/FourMenCoffee/app/src/main/res/drawable/ic_add.xml" value="0.175" />
+        <entry key="..\:/FourMenCoffee/app/src/main/res/drawable/ic_google_plus.xml" value="0.255" />
+        <entry key="..\:/FourMenCoffee/app/src/main/res/drawable/ic_launcher_background.xml" value="0.255" />
+        <entry key="..\:/FourMenCoffee/app/src/main/res/drawable/ic_login_hero.xml" value="0.255" />
+        <entry key="..\:/FourMenCoffee/app/src/main/res/drawable/ic_register_hero.xml" value="0.255" />
+        <entry key="..\:/FourMenCoffee/app/src/main/res/drawable/ic_search.xml" value="0.1645" />
+        <entry key="..\:/FourMenCoffee/app/src/main/res/drawable/ic_side_bg.xml" value="0.255" />
+        <entry key="..\:/FourMenCoffee/app/src/main/res/drawable/test_mau.xml" value="0.1645" />
+        <entry key="..\:/FourMenCoffee/app/src/main/res/layout/activity_forgot_password.xml" value="0.264" />
+        <entry key="..\:/FourMenCoffee/app/src/main/res/layout/activity_home.xml" value="0.25" />
+        <entry key="..\:/FourMenCoffee/app/src/main/res/layout/activity_login.xml" value="0.264" />
+        <entry key="..\:/FourMenCoffee/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/FourMenCoffee/app/src/main/res/layout/activity_main2.xml" value="0.13796296296296295" />
+        <entry key="..\:/FourMenCoffee/app/src/main/res/layout/activity_register.xml" value="0.25" />
+        <entry key="..\:/FourMenCoffee/app/src/main/res/layout/activity_search.xml" value="0.2359375" />
+        <entry key="..\:/FourMenCoffee/app/src/main/res/layout/fragment_classify.xml" value="0.20454545454545456" />
+        <entry key="..\:/FourMenCoffee/app/src/main/res/layout/fragment_hobby.xml" value="0.13134057971014493" />
+        <entry key="..\:/FourMenCoffee/app/src/main/res/layout/fragment_home.xml" value="0.22745098039215686" />
+        <entry key="..\:/FourMenCoffee/app/src/main/res/layout/fragment_personal.xml" value="0.25" />
+        <entry key="..\:/FourMenCoffee/app/src/main/res/layout/fragment_price.xml" value="0.13134057971014493" />
+        <entry key="..\:/FourMenCoffee/app/src/main/res/layout/fragment_shopping.xml" value="0.25" />
+        <entry key="..\:/FourMenCoffee/app/src/main/res/layout/item_category.xml" value="0.264" />
+        <entry key="..\:/FourMenCoffee/app/src/main/res/layout/item_classify.xml" value="0.2359375" />
+        <entry key="..\:/FourMenCoffee/app/src/main/res/layout/item_coffee.xml" value="0.264" />
+        <entry key="..\:/FourMenCoffee/app/src/main/res/layout/test_mau.xml" value="0.2359375" />
+        <entry key="..\:/FourMenCoffee/app/src/main/res/menu/menu_bottom_navigation.xml" value="0.25" />
+        <entry key="..\:/FourMenCoffee/app/src/main/res/menu/menu_top.xml" value="0.25" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

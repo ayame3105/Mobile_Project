@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".personal.PersonalFragment"
+    android:background="#e3efef">
+
+    <ImageView
+        android:id="@+id/banner_img"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/banner_shop"
+        android:scaleType="centerCrop"/>
+
+    <TextView
+        android:id="@+id/user_name"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="User name: "
+        android:layout_below="@+id/banner_img"
+        android:textStyle="bold"
+        android:textSize="20dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="edit user name"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:id="@+id/edit_user_name"
+        android:layout_toRightOf="@+id/user_name"
+        android:layout_below="@+id/banner_img"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/user_email"
+        android:text="Email: "
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_below="@id/user_name"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/edit_user_email"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:text="Edit user email"
+        android:layout_toRightOf="@id/user_email"
+        android:layout_below="@id/user_name"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Role: "
+        android:layout_below="@+id/user_email"
+        android:textStyle="bold"
+        android:id="@+id/user_role"
+        android:textSize="20dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="edit role"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:id="@+id/edit_role"
+        android:layout_toRightOf="@+id/user_role"
+        android:layout_below="@+id/edit_user_email"/>
+
+
+
+</RelativeLayout>

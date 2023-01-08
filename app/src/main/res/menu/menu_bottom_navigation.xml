@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/home_tab"
+        android:title="Home" android:icon="@drawable/home_icon"/>
+    <item android:id="@+id/classify_tab"
+        android:title="Classify" android:icon="@drawable/classify_icon"/>
+    <item android:id="@+id/price_tab"
+        android:title="Price" android:icon="@drawable/price_icon"/>
+    <item android:id="@+id/hobby_tab"
+        android:title="Hobby" android:icon="@drawable/hobby_icon"/>
+    <item android:id="@+id/personal_tab"
+        android:title="Personal" android:icon="@drawable/personal_icon"/>
+</menu>
