@@ -49,6 +49,19 @@
                 android:text="5.0"
                 android:layout_marginTop="5dp"
                 />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tiền"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="30dp"
+                android:id="@+id/recommend_price"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="đ"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"/>
         </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

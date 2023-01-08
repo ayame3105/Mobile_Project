@@ -40,7 +40,7 @@ public class ClassifyAdapter extends FirebaseRecyclerAdapter<Classify,ClassifyAd
             @Override
             public void onClick(View view) {
                 AppCompatActivity activity =(AppCompatActivity)view.getContext();
-                activity.getSupportFragmentManager().beginTransaction().replace(R.id.activity_main,
+                activity.getSupportFragmentManager().beginTransaction().replace(R.id.activity_main_container,
                         new DescriptionFragment(model.getTitle(),model.getSub_title(),model.getUrl()))
                         .addToBackStack(null).commit();
             }

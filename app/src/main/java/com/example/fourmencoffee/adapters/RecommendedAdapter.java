@@ -29,7 +29,7 @@ public class RecommendedAdapter extends RecyclerView.Adapter<RecommendedAdapter.
     @NonNull
     @Override
     public RecommendedAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.recommended_item,parent,false));
+        return new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.recommended_item, parent, false));
     }
 
     @Override
@@ -39,6 +39,7 @@ public class RecommendedAdapter extends RecyclerView.Adapter<RecommendedAdapter.
         holder.name.setText(list.get(position).getName());
         holder.description.setText(list.get(position).getDescription());
         holder.rating.setText(list.get(position).getRating());
+
     }
 
     @Override
@@ -46,9 +47,10 @@ public class RecommendedAdapter extends RecyclerView.Adapter<RecommendedAdapter.
         return list.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView;
         TextView name, description, rating;
+        int price;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             imageView = itemView.findViewById(R.id.rec_img);
