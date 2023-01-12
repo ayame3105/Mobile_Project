@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.fourmencoffee.activity.LoginActivity;
+
 public class Forgot_Password extends AppCompatActivity {
     Button blabla;
     @Override

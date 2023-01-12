@@ -1,7 +1,5 @@
 package com.example.fourmencoffee.personal;
 
-import android.app.FragmentManager;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,15 +8,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 
-import com.example.fourmencoffee.Forgot_Password;
-import com.example.fourmencoffee.LoginActivity;
 import com.example.fourmencoffee.R;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.firestore.FirebaseFirestore;
 
 public class PersonalFragment extends Fragment {
     private DatabaseReference databaseReference;
@@ -38,14 +31,7 @@ public class PersonalFragment extends Fragment {
 
         databaseReference = FirebaseDatabase.getInstance().getReference();
 
-        profile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), ProfileActivity.class);
-                startActivity(intent);
 
-            }
-        });
 
 
         return root;

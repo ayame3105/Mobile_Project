@@ -25,6 +25,13 @@
             android:textStyle="bold"
             android:id="@+id/pop_name"/>
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="type"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            android:id="@+id/pop_type"/>
+        <TextView
             android:layout_width="190dp"
             android:layout_height="wrap_content"
             android:id="@+id/pop_des"

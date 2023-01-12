@@ -12,16 +12,22 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.fourmencoffee.R;
 import com.example.fourmencoffee.adapters.ClassifyAdapter;
 import com.example.fourmencoffee.databinding.FragmentClassifyBinding;
+import com.example.fourmencoffee.home.HomeFragment;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class ClassifyFragment extends Fragment {
+    public static final String TAG_CLASSIFY_FRAGMENT = ClassifyFragment.class.getName();
     private FragmentClassifyBinding fragmentClassifyBinding;
     private View view;
     private RecyclerView recyclerViewtrongnuoc, recyclerViewngoainuoc;
 
     ClassifyAdapter classifyAdapterTrongNuoc;
     ClassifyAdapter classifyAdapterNgoaiNuoc;
+    @Override
+    public void onResume() {
+        super.onResume();
+    }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

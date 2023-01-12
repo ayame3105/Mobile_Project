@@ -36,15 +36,7 @@ public class ClassifyAdapter extends FirebaseRecyclerAdapter<Classify,ClassifyAd
         Glide.with(holder.img1.getContext()).load(model.getUrl()).override(500,500)
                 .into(holder.img1);
 
-        holder.img1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                AppCompatActivity activity =(AppCompatActivity)view.getContext();
-                activity.getSupportFragmentManager().beginTransaction().replace(R.id.activity_main_container,
-                        new DescriptionFragment(model.getTitle(),model.getSub_title(),model.getUrl()))
-                        .addToBackStack(null).commit();
-            }
-        });
+
 
 
     }

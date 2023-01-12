@@ -1,8 +1,10 @@
-package com.example.fourmencoffee;
+package com.example.fourmencoffee.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.fourmencoffee.R;
 
 public class SearchActivity extends AppCompatActivity {
 

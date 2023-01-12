@@ -1,4 +1,4 @@
-package com.example.fourmencoffee;
+package com.example.fourmencoffee.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -21,6 +21,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.fourmencoffee.HobbyFragment;
+import com.example.fourmencoffee.PriceFragment;
+import com.example.fourmencoffee.R;
 import com.example.fourmencoffee.adapters.ViewPagerAdapter;
 import com.example.fourmencoffee.leftnagivationview.CategoryFragment;
 import com.example.fourmencoffee.classify.ClassifyFragment;

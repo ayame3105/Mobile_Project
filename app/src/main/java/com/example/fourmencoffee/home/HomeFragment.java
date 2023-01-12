@@ -44,6 +44,7 @@ import java.util.List;
 
 
 public class HomeFragment extends Fragment {
+    public static final String TAG_HOME_FRAGMENT = HomeFragment.class.getName();
     ScrollView scrollView;
     ProgressBar progressBar;
     //Slider show
@@ -62,6 +63,11 @@ public class HomeFragment extends Fragment {
     //Recommended items
     List<RecommendedModel> recommendedModelList;
     RecommendedAdapter recommendedAdapter;
+
+    @Override
+    public void onResume() {
+        super.onResume();
+    }
 
     @SuppressLint("ClickableViewAccessibility")
     @Override

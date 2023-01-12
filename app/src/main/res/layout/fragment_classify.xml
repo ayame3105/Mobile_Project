@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingTop="38dp"
     tools:context=".classify.ClassifyFragment"
-    android:id="@+id/classify_fragment">
+    android:id="@+id/classify_fragment"
+    android:background="#e3efef">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

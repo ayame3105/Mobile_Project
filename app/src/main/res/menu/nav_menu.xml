@@ -9,14 +9,38 @@
             android:title="Home"
             android:icon="@drawable/home_icon"/>
         <item
+            android:id="@+id/nav_classify"
+            android:title="Classify"
+            android:icon="@drawable/classify_icon"/>
+        <item
             android:id="@+id/nav_profile"
             android:title="Profile"
             android:icon="@drawable/personal_icon"/>
         <item
             android:id="@+id/nav_category"
-            android:title="Home"
-            android:icon="@drawable/home_icon"/>
+            android:title="Category"
+            android:icon="@drawable/category_icon"/>
+        <item
+            android:id="@+id/nav_offers"
+            android:title="Offers"
+            android:icon="@drawable/offers_icon"/>
     </group>
+    <item android:title="My shopping">
+        <menu>
+            <item
+                android:id="@+id/nav_new_product"
+                android:title="New Products"
+                android:icon="@drawable/new_product_icon"/>
+            <item
+                android:id="@+id/nav_my_orders"
+                android:title="My orders"
+                android:icon="@drawable/shopping_icon"/>
+            <item
+                android:id="@+id/nav_my_cart"
+                android:title="My carts"
+                android:icon="@drawable/bag"/>
+        </menu>
+    </item>
 
 
 </menu>
