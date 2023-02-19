@@ -10,7 +10,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/contraint1"
-        android:visibility="gone">
+        android:visibility="gone"
+        >
 
         <ImageView
             android:layout_width="wrap_content"
@@ -36,7 +37,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/contraint2">
+        android:id="@+id/contraint2"
+        >
 
         <TextView
             android:id="@+id/textView3"
@@ -44,7 +46,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="72dp"
             android:background="#4cb5d6"
-            android:text="Tổng tiền"
+            android:text="Tổng tiền: 0đ"
             android:textAlignment="center"
             android:textSize="23dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -56,12 +58,11 @@
             android:id="@+id/recycle_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="108dp"
-            android:padding="10dp"
+            android:layout_marginLeft="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/buy_now"

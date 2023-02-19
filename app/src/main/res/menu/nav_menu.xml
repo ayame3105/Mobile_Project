@@ -41,6 +41,14 @@
                 android:icon="@drawable/bag"/>
         </menu>
     </item>
+    <item android:title="Other">
+        <menu>
 
+            <item
+                android:id="@+id/nav_log_out"
+                android:title="Log out"
+                android:icon="@drawable/logout"/>
+        </menu>
+    </item>
 
 </menu>

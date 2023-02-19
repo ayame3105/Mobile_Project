@@ -31,7 +31,6 @@ public class CategoryFragment extends Fragment {
     RecyclerView recyclerView;
     FirebaseFirestore db;
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -63,15 +62,6 @@ public class CategoryFragment extends Fragment {
                         }
                     }
                 });
-
-
-
-
-
-
-
-
-
         return root;
     }
 }

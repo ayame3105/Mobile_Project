@@ -1,6 +1,7 @@
 package com.example.fourmencoffee.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.fourmencoffee.R;
+import com.example.fourmencoffee.activity.NavCategoryActivity;
 import com.example.fourmencoffee.model.NavCategoryModel;
 
 import java.util.List;
@@ -40,6 +42,15 @@ public class NavCategoryAdapter extends RecyclerView.Adapter<NavCategoryAdapter.
         holder.name.setText(list.get(position).getName());
         holder.discount.setText(list.get(position).getDiscount());
         holder.description.setText(list.get(position).getDescription());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, NavCategoryActivity.class);
+                intent.putExtra("type",list.get(holder.getAdapterPosition()).getType());
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override

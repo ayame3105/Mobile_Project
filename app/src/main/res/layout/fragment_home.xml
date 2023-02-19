@@ -43,10 +43,10 @@
                 android:id="@+id/search_box"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/ic_search"
+                android:drawableLeft="@drawable/ic_baseline_search_24"
 
-                android:drawablePadding="10dp"
-                android:layout_margin="8dp"
+                android:drawablePadding="1dp"
+                android:layout_margin="10dp"
                 android:hint="Tìm kiếm sản phẩm"
                 android:background="@drawable/search_bg"
                 />

@@ -99,12 +99,12 @@
         android:layout_marginTop="45dp"/>
 
 
-    <TextView
-        android:id="@+id/continuewith"
+    <Button
+        android:id="@+id/admin_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Or continue with"
+        android:text="ADMIN"
         android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -118,7 +118,7 @@
         android:layout_height="50dp"
         android:src="@drawable/google_icon"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/continuewith"
+        app:layout_constraintTop_toBottomOf="@id/admin_button"
         android:layout_marginStart="80dp"
         android:layout_marginTop="30dp"/>
 
@@ -129,7 +129,7 @@
         android:src="@drawable/facebook_icon"
         android:layout_marginEnd="80dp"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/continuewith"
+        app:layout_constraintTop_toBottomOf="@id/admin_button"
         android:layout_marginTop="30dp"/>
     <TextView
         android:id="@+id/not_a_member"

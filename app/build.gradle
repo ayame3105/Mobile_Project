@@ -44,6 +44,7 @@ dependencies {
     implementation 'androidx.navigation:navigation-fragment:2.5.3'
     implementation 'androidx.navigation:navigation-ui:2.5.3'
     implementation 'com.google.firebase:firebase-storage:20.1.0'
+    implementation fileTree(dir: 'E:\\icon\\cafe\\ThuVien\\DemoZPDK_Android\\ZPDK-Android', include: ['*.aar', '*.jar'], exclude: [])
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
@@ -74,4 +75,8 @@ dependencies {
     implementation 'com.github.denzcoskun:ImageSlideshow:0.1.0'
     //auto hide bottom navigation
     implementation 'com.github.yhirano:ahbottomnavigation:2.0.6-p1'
+    //circle image
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    implementation 'com.squareup.okhttp3:okhttp:4.6.0'
 }

@@ -15,6 +15,7 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -23,6 +24,7 @@ import android.widget.Toast;
 
 import com.example.fourmencoffee.HobbyFragment;
 import com.example.fourmencoffee.PriceFragment;
+import com.example.fourmencoffee.QLHDActivity;
 import com.example.fourmencoffee.R;
 import com.example.fourmencoffee.adapters.ViewPagerAdapter;
 import com.example.fourmencoffee.leftnagivationview.CategoryFragment;
@@ -166,6 +168,11 @@ implements NavigationView.OnNavigationItemSelectedListener{
         }
         else if (id == R.id.nav_my_cart){
             openMyCartsFragment();
+        }
+        else if (id == R.id.nav_log_out){
+            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(intent);
+            overridePendingTransition(R.anim.slide_in_right, R.anim.stay);
         }
         return true;
     }

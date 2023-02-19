@@ -23,9 +23,9 @@ public class LoginActivity extends AppCompatActivity
 {
 
     ImageView fb, gg;
-    TextView em, hint_em, pw, hint_pw, notamember, orcontinue, hello, wel;
+    TextView em, hint_em, pw, hint_pw, notamember, hello, wel;
     TextView reset_pw,register_now;
-    Button login_button;
+    Button login_button, admin_button;
     private FirebaseAuth mAuth;
 
 
@@ -37,6 +37,8 @@ public class LoginActivity extends AppCompatActivity
 
 
         login_button = findViewById(R.id.login_button);
+        admin_button =  findViewById(R.id.admin_button);
+
         hello =  findViewById(R.id.FirstPart1);
         wel = findViewById(R.id.FirstPart2);
         fb =  findViewById(R.id.fb_icon);
@@ -46,7 +48,7 @@ public class LoginActivity extends AppCompatActivity
         pw =  findViewById(R.id.password);
         hint_pw =  findViewById(R.id.hint_password);
         notamember =  findViewById(R.id.not_a_member);
-        orcontinue =  findViewById(R.id.continuewith);
+
 
         register_now =  findViewById(R.id.registernow);
         reset_pw =  findViewById(R.id.reset_password);
@@ -61,7 +63,7 @@ public class LoginActivity extends AppCompatActivity
         hint_em.setTranslationX(300);
         pw.setTranslationX(300);
         hint_pw.setTranslationX(300);
-        orcontinue.setTranslationX(300);
+        admin_button.setTranslationX(300);
         notamember.setTranslationX(300);
 
         register_now.setTranslationX(300);
@@ -77,7 +79,7 @@ public class LoginActivity extends AppCompatActivity
         hint_em.animate().translationX(0).setDuration(700).setStartDelay(0);
         pw.animate().translationX(0).setDuration(700).setStartDelay(0);
         hint_pw.animate().translationX(0).setDuration(700).setStartDelay(0);
-        orcontinue.animate().translationX(0).setDuration(700).setStartDelay(0);
+        admin_button.animate().translationX(0).setDuration(700).setStartDelay(0);
         notamember.animate().translationX(0).setDuration(700).setStartDelay(0);
         register_now.animate().translationX(0).setDuration(700).setStartDelay(0);
         reset_pw.animate().translationX(0).setDuration(700).setStartDelay(0);
@@ -95,6 +97,15 @@ public class LoginActivity extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.stay);
+            }
+        });
+
+        admin_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, LoginAdminActivity.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right, R.anim.stay);
             }

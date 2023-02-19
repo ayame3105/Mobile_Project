@@ -43,8 +43,7 @@ public class DetailedActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detailed);
-        firestore = FirebaseFirestore.getInstance();
-        auth = FirebaseAuth.getInstance();
+
 
 
 
@@ -80,9 +79,10 @@ public class DetailedActivity extends AppCompatActivity {
         addItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (totalQuantity < 20){
+                if (totalQuantity < 10){
                     totalQuantity++;
                     quantity.setText(String.valueOf(totalQuantity));
+                    totalPrice = viewAllModel.getPrice() * totalQuantity;
                 }
             }
         });
@@ -90,30 +90,20 @@ public class DetailedActivity extends AppCompatActivity {
         removeItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (totalQuantity > 0){
+                if (totalQuantity > 1){
                     totalQuantity--;
                     quantity.setText(String.valueOf(totalQuantity));
+                    totalPrice = viewAllModel.getPrice() * totalQuantity;
                 }
             }
         });
 
-        addToCart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                addToCart();
-            }
-        });
-
-
-
-
-
-
-
-
-
-
-
+       addToCart.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               addToCart();
+           }
+       });
     }
 
     private void addToCart() {
@@ -134,19 +124,19 @@ public class DetailedActivity extends AppCompatActivity {
         cartMap.put("currentTime",saveCurrentTime);
         cartMap.put("totalQuantity",quantity.getText().toString());
         cartMap.put("totalPrice",totalPrice);
-
-        firestore.collection("AddToCart").document(auth.getCurrentUser().getUid())
-                .collection("CurrentUser").add(cartMap).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
+        firestore = FirebaseFirestore.getInstance();
+        auth = FirebaseAuth.getInstance();
+        firestore.collection("AddToCart")
+                .document(auth.getCurrentUser().getUid()).collection("CurrentUser")
+                .add(cartMap)
+                .addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
                     @Override
                     public void onComplete(@NonNull Task<DocumentReference> task) {
-                        Toast.makeText(DetailedActivity.this, "Đã thêm sản phẩm", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(DetailedActivity.this, "Đã thêm sản phẩm",
+                                Toast.LENGTH_SHORT).show();
                         finish();
                     }
                 });
-
-
-
-
     }
 
 
