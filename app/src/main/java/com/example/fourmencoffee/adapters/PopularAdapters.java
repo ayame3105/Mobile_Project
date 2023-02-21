@@ -41,10 +41,6 @@ public class PopularAdapters extends RecyclerView.Adapter<PopularAdapters.ViewHo
         holder.description.setText(poppularModelList.get(position).getDescription());
         holder.discount.setText(poppularModelList.get(position).getDiscount());
         holder.type.setText(poppularModelList.get(position).getType());
-
-
-
-
     }
 
     @Override

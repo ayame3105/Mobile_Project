@@ -51,11 +51,6 @@ public class ViewAllAdapter extends RecyclerView.Adapter<ViewAllAdapter.ViewHold
                 context.startActivity(intent);
             }
         });
-
-
-
-
-
     }
 
     @Override

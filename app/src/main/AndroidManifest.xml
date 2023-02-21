@@ -22,14 +22,35 @@
         android:theme="@style/Theme.FourMenCoffee"
         tools:targetApi="31">
         <activity
-            android:name=".ThongKeActivity"
+            android:name=".activity.ThemSanPhamActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".QLHDActivity"
+            android:name=".activity.QuanLySanPhamActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".activity.QLSPViewAllActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".activity.ThongKeActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".activity.QLHDActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -37,7 +58,13 @@
         </activity>
         <activity
             android:name=".activity.AdminActivity"
-            android:exported="false" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".activity.PlacedOrderActivity"
             android:exported="false">
@@ -56,29 +83,26 @@
             android:name=".activity.DetailedActivity"
             android:exported="false" />
         <activity
+            android:name=".activity.DetailQLSPActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.ViewAllActivity"
             android:exported="false" />
         <activity
             android:name=".activity.SearchActivity"
             android:exported="false" />
         <activity
-            android:name=".Forgot_Password"
+            android:name=".activity.Forgot_Password"
             android:exported="false" />
         <activity
             android:name=".activity.MainActivity"
-            android:exported="false" />
+            android:exported="false"></activity>
         <activity
             android:name=".activity.RegisterActivity"
             android:exported="false" />
         <activity
             android:name=".activity.LoginActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="false" />
         <activity
             android:name=".activity.LoginAdminActivity"
             android:exported="false" />

@@ -12,6 +12,7 @@ public class MyCartModel implements Serializable {
     String fullname;
     int totalPrice;
     String documentId;
+
     public MyCartModel() {
     }
 
@@ -94,7 +95,8 @@ public class MyCartModel implements Serializable {
         return trangthai;
     }
 
-    public void setTrangthai(String trangthai) {
+    public void setTrangthai(String trangthai)
+    {
         this.trangthai = trangthai;
     }
 }

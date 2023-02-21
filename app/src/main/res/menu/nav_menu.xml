@@ -20,17 +20,10 @@
             android:id="@+id/nav_category"
             android:title="Category"
             android:icon="@drawable/category_icon"/>
-        <item
-            android:id="@+id/nav_offers"
-            android:title="Offers"
-            android:icon="@drawable/offers_icon"/>
+
     </group>
     <item android:title="My shopping">
         <menu>
-            <item
-                android:id="@+id/nav_new_product"
-                android:title="New Products"
-                android:icon="@drawable/new_product_icon"/>
             <item
                 android:id="@+id/nav_my_orders"
                 android:title="My orders"

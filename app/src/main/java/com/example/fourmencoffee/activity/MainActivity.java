@@ -8,29 +8,20 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
-import com.example.fourmencoffee.HobbyFragment;
 import com.example.fourmencoffee.PriceFragment;
-import com.example.fourmencoffee.QLHDActivity;
 import com.example.fourmencoffee.R;
-import com.example.fourmencoffee.adapters.ViewPagerAdapter;
 import com.example.fourmencoffee.leftnagivationview.CategoryFragment;
 import com.example.fourmencoffee.classify.ClassifyFragment;
 import com.example.fourmencoffee.home.HomeFragment;
-import com.example.fourmencoffee.leftnagivationview.CategoryFragment;
 import com.example.fourmencoffee.leftnagivationview.MyCartsFragment;
 import com.example.fourmencoffee.leftnagivationview.MyOrdersFragment;
 import com.example.fourmencoffee.leftnagivationview.NewProductsFragment;
@@ -112,15 +103,15 @@ implements NavigationView.OnNavigationItemSelectedListener{
                         openPriceFragment();
 //                        viewPager.setCurrentItem(2);
                         break;
-                    case R.id.hobby_tab:
-                        openHobbyFragment();
-//                        viewPager.setCurrentItem(3);
-                        break;
-                    case R.id.personal_tab:
-                        openPersonalFragment();
-//                        viewPager.setCurrentItem(4);
-                        navigationView.setCheckedItem(R.id.nav_profile);
-                        break;
+//                    case R.id.hobby_tab:
+//                        openHobbyFragment();
+////                        viewPager.setCurrentItem(3);
+//                        break;
+//                    case R.id.personal_tab:
+//                        openPersonalFragment();
+////                        viewPager.setCurrentItem(4);
+//                        navigationView.setCheckedItem(R.id.nav_profile);
+//                        break;
                 }
                 return true;
             }
@@ -150,19 +141,19 @@ implements NavigationView.OnNavigationItemSelectedListener{
             openClassifyFragment();
             bottomNavigationView.getMenu().findItem(R.id.classify_tab).setChecked(true);
         }
-        else if (id == R.id.nav_profile){
-            openProfileFragment();
-            bottomNavigationView.getMenu().findItem(R.id.personal_tab).setChecked(true);
-        }
+//        else if (id == R.id.nav_profile){
+//            openProfileFragment();
+//            bottomNavigationView.getMenu().findItem(R.id.personal_tab).setChecked(true);
+//        }
         else if (id == R.id.nav_category){
             openCategoryFragment();
         }
-        else if (id == R.id.nav_offers){
-            openOffersFragment();
-        }
-        else if (id == R.id.nav_new_product){
-            openNewProductsFragment();
-        }
+//        else if (id == R.id.nav_offers){
+//            openOffersFragment();
+//        }
+//        else if (id == R.id.nav_new_product){
+//            openNewProductsFragment();
+//        }
         else if (id == R.id.nav_my_orders){
             openMyOrdersFragment();
         }
@@ -229,12 +220,6 @@ implements NavigationView.OnNavigationItemSelectedListener{
         if (currentFragment != FRAGMENT_PRICE){
             replaceFragment(new PriceFragment());
             currentFragment = FRAGMENT_PRICE;
-        }
-    }
-    private void openHobbyFragment(){
-        if (currentFragment != FRAGMENT_HOBBY){
-            replaceFragment(new HobbyFragment());
-            currentFragment = FRAGMENT_HOBBY;
         }
     }
     private void openPersonalFragment(){

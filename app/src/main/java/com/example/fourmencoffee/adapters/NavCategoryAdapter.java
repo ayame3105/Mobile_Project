@@ -20,20 +20,19 @@ import com.example.fourmencoffee.model.NavCategoryModel;
 import java.util.List;
 
 public class NavCategoryAdapter extends RecyclerView.Adapter<NavCategoryAdapter.ViewHolder> {
+    Context context;
+    List<NavCategoryModel> list;
+
     public NavCategoryAdapter(Context context, List<NavCategoryModel> list) {
         this.context = context;
         this.list = list;
     }
 
-    Context context;
-    List<NavCategoryModel> list;
-
-
-
     @NonNull
     @Override
     public NavCategoryAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.nav_cat_item, parent, false));
+        return new ViewHolder(LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.nav_cat_item, parent, false));
     }
 
     @Override

@@ -47,7 +47,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginTop="30dp">
+                android:layout_marginTop="20dp">
                 <ImageView
                     android:layout_width="70dp"
                     android:layout_height="30dp"
@@ -63,19 +63,17 @@
                     android:layout_height="wrap_content"
                     android:text="Money"
                     android:textSize="20dp"
-
                     android:layout_marginLeft="30dp"
                     android:id="@+id/view_price"/>
-
             </LinearLayout>
-
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:src="@drawable/ic_baseline_arrow_forward_ios_24"
                 android:layout_gravity="end"
-                android:layout_marginBottom="10dp"
-                android:layout_marginRight="10dp"/>
+
+                android:layout_marginRight="30dp"/>
+
 
         </LinearLayout>
     </LinearLayout>

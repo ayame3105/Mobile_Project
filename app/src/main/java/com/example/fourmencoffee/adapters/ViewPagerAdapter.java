@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
-import com.example.fourmencoffee.HobbyFragment;
 import com.example.fourmencoffee.personal.PersonalFragment;
 import com.example.fourmencoffee.PriceFragment;
 import com.example.fourmencoffee.classify.ClassifyFragment;
@@ -30,10 +29,6 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter{
                 return new ClassifyFragment();
             case 2:
                 return new PriceFragment();
-            case 3:
-                return new HobbyFragment();
-            case 4:
-                return new PersonalFragment();
             default:
                 return new HomeFragment();
         }
@@ -41,7 +36,7 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter{
 
     @Override
     public int getCount() {
-        return 5;
+        return 3;
     }
 
     @Nullable
@@ -58,12 +53,12 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter{
             case 2:
                 title = "Price";
                 break;
-            case 3:
-                title = "Hobby";
-                break;
-            case 4:
-                title = "Personal";
-                break;
+//            case 3:
+//                title = "Hobby";
+//                break;
+//            case 4:
+//                title = "Personal";
+//                break;
         }
         return title;
     }

@@ -99,11 +99,6 @@ public class MyCartsFragment extends Fragment {
         });
 
 
-
-
-
-
-
         return root;
     }
     public BroadcastReceiver mMessageReceiver = new BroadcastReceiver() {
