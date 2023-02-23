@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
-import com.example.fourmencoffee.personal.PersonalFragment;
+
 import com.example.fourmencoffee.PriceFragment;
 import com.example.fourmencoffee.classify.ClassifyFragment;
 import com.example.fourmencoffee.home.HomeFragment;

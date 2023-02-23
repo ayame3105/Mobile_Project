@@ -1,5 +1,9 @@
 package com.example.fourmencoffee.activity;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,10 +17,18 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.fourmencoffee.PriceFragment;
 import com.example.fourmencoffee.R;
 import com.example.fourmencoffee.leftnagivationview.CategoryFragment;
@@ -24,15 +36,18 @@ import com.example.fourmencoffee.classify.ClassifyFragment;
 import com.example.fourmencoffee.home.HomeFragment;
 import com.example.fourmencoffee.leftnagivationview.MyCartsFragment;
 import com.example.fourmencoffee.leftnagivationview.MyOrdersFragment;
-import com.example.fourmencoffee.leftnagivationview.NewProductsFragment;
-import com.example.fourmencoffee.leftnagivationview.OffersFragment;
 import com.example.fourmencoffee.leftnagivationview.ProfileFragment;
-import com.example.fourmencoffee.personal.PersonalFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
+import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity
 implements NavigationView.OnNavigationItemSelectedListener{
+
+    public static final int MY_REQUEST_CODE = 10;
 
     private ViewPager viewPager;
     private BottomNavigationView bottomNavigationView;
@@ -40,6 +55,32 @@ implements NavigationView.OnNavigationItemSelectedListener{
     private NavigationView navigationView;
     private AppBarConfiguration mAppBarConfiguration;
     DrawerLayout drawer;
+    private final ProfileFragment profileFragment = new ProfileFragment();
+
+    private final ActivityResultLauncher<Intent> activityResultLauncher =
+            registerForActivityResult(new ActivityResultContracts.StartActivityForResult(),
+                    new ActivityResultCallback<ActivityResult>() {
+                        @Override
+                        public void onActivityResult(ActivityResult result) {
+                            if (result.getResultCode() == RESULT_OK)
+                            {
+                                Intent intent = result.getData();
+                                if (intent == null)
+                                    return;
+                                Uri uri = intent.getData();
+                                profileFragment.setUri(uri);
+                                try {
+                                    Bitmap bitmap = MediaStore.Images.Media
+                                            .getBitmap(getContentResolver(), uri);
+                                    profileFragment.setBitmapImageView(bitmap);
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        }
+                    });
+    private ImageView imgAvatar;
+    private TextView tv_name, tv_email;
 
     private static final int FRAGMENT_HOME = 1;
     private static final int FRAGMENT_CLASSIFY = 2;
@@ -74,7 +115,8 @@ implements NavigationView.OnNavigationItemSelectedListener{
         Toolbar toolbar = findViewById(R.id.toolbar);
         drawer = findViewById (R. id. drawer_layout);
         navigationView = findViewById(R.id.nav_view);
-
+        InitUi();
+        showUserInformation();
         //Xu ly left navigation
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar,R.string.open, R.string.close);
         drawer.addDrawerListener(toggle);
@@ -101,17 +143,17 @@ implements NavigationView.OnNavigationItemSelectedListener{
                         break;
                     case R.id.price_tab:
                         openPriceFragment();
-//                        viewPager.setCurrentItem(2);
+    //                    viewPager.setCurrentItem(2);
                         break;
 //                    case R.id.hobby_tab:
 //                        openHobbyFragment();
 ////                        viewPager.setCurrentItem(3);
 //                        break;
-//                    case R.id.personal_tab:
-//                        openPersonalFragment();
-////                        viewPager.setCurrentItem(4);
-//                        navigationView.setCheckedItem(R.id.nav_profile);
-//                        break;
+                    case R.id.personal_tab:
+                        openProfileFragment();
+ //                       viewPager.setCurrentItem(4);
+                        navigationView.setCheckedItem(R.id.nav_profile);
+                        break;
                 }
                 return true;
             }
@@ -123,6 +165,32 @@ implements NavigationView.OnNavigationItemSelectedListener{
 
 
     }
+
+    private void InitUi(){
+        imgAvatar = navigationView.getHeaderView(0).findViewById(R.id.img_avatar);
+        tv_name = navigationView.getHeaderView(0).findViewById(R.id.tv_username);
+        tv_email = navigationView.getHeaderView(0).findViewById(R.id.tv_email);
+    }
+
+    public void showUserInformation(){
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user == null)
+            return;
+        String name = user.getDisplayName();
+        String email = user.getEmail();
+        Uri photoUrl = user.getPhotoUrl();
+        if (name == null)
+            tv_name.setVisibility(View.GONE);
+        else
+        {
+            tv_name.setVisibility(View.VISIBLE);
+            tv_name.setText(name);
+        }
+        tv_email.setText(email);
+        Glide.with(this).load(photoUrl).error(R.drawable.black_profile_avt).into(imgAvatar);
+
+    }
+
     private void replaceFragment(Fragment fragment){
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -130,6 +198,7 @@ implements NavigationView.OnNavigationItemSelectedListener{
 
         fragmentTransaction.commit();
     }
+
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
@@ -141,10 +210,10 @@ implements NavigationView.OnNavigationItemSelectedListener{
             openClassifyFragment();
             bottomNavigationView.getMenu().findItem(R.id.classify_tab).setChecked(true);
         }
-//        else if (id == R.id.nav_profile){
-//            openProfileFragment();
-//            bottomNavigationView.getMenu().findItem(R.id.personal_tab).setChecked(true);
-//        }
+        else if (id == R.id.nav_profile){
+            openProfileFragment();
+            bottomNavigationView.getMenu().findItem(R.id.personal_tab).setChecked(true);
+        }
         else if (id == R.id.nav_category){
             openCategoryFragment();
         }
@@ -161,6 +230,7 @@ implements NavigationView.OnNavigationItemSelectedListener{
             openMyCartsFragment();
         }
         else if (id == R.id.nav_log_out){
+            FirebaseAuth.getInstance().signOut();
             Intent intent = new Intent(MainActivity.this, LoginActivity.class);
             startActivity(intent);
             overridePendingTransition(R.anim.slide_in_right, R.anim.stay);
@@ -182,7 +252,7 @@ implements NavigationView.OnNavigationItemSelectedListener{
     }
     private void openProfileFragment(){
         if (currentFragment != FRAGMENT_PROFILE){
-            replaceFragment(new ProfileFragment());
+            replaceFragment(profileFragment);
             currentFragment = FRAGMENT_PROFILE;
         }
     }
@@ -192,18 +262,7 @@ implements NavigationView.OnNavigationItemSelectedListener{
             currentFragment = FRAGMENT_CATEGORY;
         }
     }
-    private void openOffersFragment(){
-        if (currentFragment != FRAGMENT_OFFERS){
-            replaceFragment(new OffersFragment());
-            currentFragment = FRAGMENT_OFFERS;
-        }
-    }
-    private void openNewProductsFragment(){
-        if (currentFragment != FRAGMENT_NEW_PRODUCTS){
-            replaceFragment(new NewProductsFragment());
-            currentFragment = FRAGMENT_NEW_PRODUCTS;
-        }
-    }
+
     private void openMyOrdersFragment(){
         if (currentFragment != FRAGMENT_MY_ORDERS){
             replaceFragment(new MyOrdersFragment());
@@ -222,13 +281,22 @@ implements NavigationView.OnNavigationItemSelectedListener{
             currentFragment = FRAGMENT_PRICE;
         }
     }
-    private void openPersonalFragment(){
-        if (currentFragment != FRAGMENT_PERSONAL){
-            replaceFragment(new PersonalFragment());
-            currentFragment = FRAGMENT_PERSONAL;
+
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == MY_REQUEST_CODE)
+        {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED)
+                openGallery();
         }
     }
 
-
-
+    public void openGallery() {
+        Intent intent = new Intent();
+        intent.setType("image/*");
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        activityResultLauncher.launch(Intent.createChooser(intent, "Select picture"));
+    }
 }

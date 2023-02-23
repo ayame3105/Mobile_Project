@@ -141,7 +141,7 @@ public class LoginActivity extends AppCompatActivity
                                 // Sign in success, update UI with the signed-in user's information
                                 String emailFromDB = email;
 
-                                Toast.makeText(LoginActivity.this, "Logged in successfully",
+                                Toast.makeText(LoginActivity.this, "Đăng nhập thành công",
                                         Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                                 intent.putExtra("email",emailFromDB);
@@ -151,7 +151,7 @@ public class LoginActivity extends AppCompatActivity
                             } else {
                                 // If sign in fails, display a message to the user.
 
-                                Toast.makeText(LoginActivity.this, "Authentication failed.",
+                                Toast.makeText(LoginActivity.this, "Sai tên tài khoản hoặc mật khẩu.",
                                         Toast.LENGTH_SHORT).show();
                             }
                         }

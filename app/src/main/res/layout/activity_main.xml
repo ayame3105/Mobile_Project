@@ -61,14 +61,5 @@
         app:headerLayout="@layout/nav_header_main"
         app:menu="@menu/nav_menu"/>
 
-<!--    <Button-->
-<!--        android:id="@+id/add_new_post"-->
-<!--        android:layout_width="50dp"-->
-<!--        android:layout_height="50dp"-->
-<!--        android:background="@drawable/ic_add"-->
-<!--        app:layout_constraintBottom_toTopOf="@id/bottomNavigationView"-->
-<!--        app:layout_constraintRight_toRightOf="parent"-->
-<!--        android:layout_marginBottom="20dp"-->
-<!--        android:layout_marginRight="40dp"/>-->
 
 </androidx.drawerlayout.widget.DrawerLayout>

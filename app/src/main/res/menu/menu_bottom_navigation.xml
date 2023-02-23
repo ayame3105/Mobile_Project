@@ -9,6 +9,6 @@
         android:title="Price" android:icon="@drawable/price_icon"/>
 <!--    <item android:id="@+id/hobby_tab"-->
 <!--        android:title="Hobby" android:icon="@drawable/hobby_icon"/>-->
-<!--    <item android:id="@+id/personal_tab"-->
-<!--        android:title="Personal" android:icon="@drawable/personal_icon"/>-->
+    <item android:id="@+id/personal_tab"
+        android:title="Profile" android:icon="@drawable/personal_icon"/>
 </menu>

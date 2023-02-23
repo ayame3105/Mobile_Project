@@ -102,7 +102,9 @@
             android:exported="false" />
         <activity
             android:name=".activity.LoginActivity"
-            android:exported="false" />
+            android:exported="false">
+
+        </activity>
         <activity
             android:name=".activity.LoginAdminActivity"
             android:exported="false" />
