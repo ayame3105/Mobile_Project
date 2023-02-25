@@ -41,23 +41,25 @@
             android:text="description"/>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <ImageView
-                android:layout_width="70dp"
-                android:layout_height="30dp"
-                android:src="@drawable/rating_bar"
-                android:layout_marginLeft="5dp" />
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
                 android:text="5.0"
-                android:layout_weight="1"
+                android:layout_marginLeft="10dp"
                 android:id="@+id/pop_rating"
                 />
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/star"
+                android:layout_marginLeft="5dp" />
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Discount 20%"
                 android:textStyle="bold"

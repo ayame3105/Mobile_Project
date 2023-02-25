@@ -1,37 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".classify.DescriptionFragment"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:layout_marginTop="40dp">
 
-    <!-- TODO: Update blank fragment layout -->
-    <ImageView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@mipmap/ic_launcher"
-        android:id="@+id/imageholder"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/titleholder"
-        android:text="Title Holder"
-        android:textSize="25dp"
-        android:textStyle="bold"
-        android:layout_marginTop="20dp"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/subtitleholder"
-        android:text="Sub Title Holder"
-        android:textSize="25dp"
-        android:textStyle="bold"
-        android:layout_marginTop="20dp"
-        />
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_launcher"
+                android:id="@+id/imageholder"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/titleholder"
+                android:text="Title Holder"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:layout_below="@id/imageholder"
+                android:layout_marginTop="20dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/subtitleholder1"
+                android:text="Sub Title Holder"
+                android:textSize="20dp"
+                android:layout_marginTop="20dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/subtitleholder2"
+                android:text="Sub Title Holder"
+                android:textSize="20dp"
+                android:layout_marginTop="20dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/subtitleholder3"
+                android:text="Sub Title Holder"
+                android:textSize="20dp"
+                android:layout_marginTop="20dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/subtitleholder4"
+                android:text="Sub Title Holder"
+                android:textSize="20dp"
+                android:layout_marginTop="20dp"
+                />
+        </LinearLayout>
+    </ScrollView>
 
 
 
 
-</LinearLayout>
+
+</RelativeLayout>

@@ -70,7 +70,7 @@ public class ProfileFragment extends Fragment {
         storage = FirebaseStorage.getInstance();
         database= FirebaseDatabase.getInstance();
 
-        setUserInformation();
+
         mainActivity = (MainActivity) getActivity();
         profileImg.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,7 +91,7 @@ public class ProfileFragment extends Fragment {
         });
 
 
-
+        setUserInformation();
         return root;
     }
 
@@ -159,7 +159,7 @@ public class ProfileFragment extends Fragment {
         super.onActivityResult(requestCode, resultCode, data);
         if (data.getData() != null)
         {
-            Uri profileUri =data.getData();
+            Uri profileUri = data.getData();
             profileImg.setImageURI(profileUri);
             final StorageReference reference = storage.getReference().child("profile_picture")
                     .child(FirebaseAuth.getInstance().getUid());

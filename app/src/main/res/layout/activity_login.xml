@@ -49,7 +49,7 @@
         android:id="@+id/hint_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter email"
+        android:hint="Nhập email"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/email"
         android:layout_marginTop="5dp"/>
@@ -68,7 +68,7 @@
         android:id="@+id/hint_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Password"
+        android:hint="Nhập password"
         android:inputType="textPassword"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/password"
@@ -85,32 +85,35 @@
         app:layout_constraintTop_toBottomOf="@id/hint_password"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginTop="10dp"/>
+
     <Button
         android:id="@+id/login_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="195dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="45dp"
         android:background="@drawable/button_background_blue"
         android:text="Login"
-        android:textStyle="bold"
+        android:textColor="@color/white"
         android:textSize="20dp"
+        android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@id/reset_password"
-        android:layout_marginTop="45dp"/>
+        app:layout_constraintTop_toTopOf="@id/reset_password" />
 
 
     <Button
         android:id="@+id/admin_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="143dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_background_update"
         android:gravity="center"
         android:text="ADMIN"
         android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/login_button"
-        android:layout_marginTop="20dp"/>
+        app:layout_constraintTop_toBottomOf="@id/login_button" />
 
     <ImageView
         android:id="@+id/gg_icon"
@@ -135,7 +138,7 @@
         android:id="@+id/not_a_member"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Not a member? "
+        android:text="Chưa là thành viên? "
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/gg_icon"
@@ -147,7 +150,7 @@
         android:id="@+id/registernow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Register now"
+        android:text="Đăng ký ngay"
         android:textColor="#0000FF"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/fb_icon"

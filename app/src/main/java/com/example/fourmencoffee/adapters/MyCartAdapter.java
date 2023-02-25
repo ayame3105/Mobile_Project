@@ -28,6 +28,7 @@ public class MyCartAdapter extends RecyclerView.Adapter<MyCartAdapter.ViewHolder
     Context context;
     List<MyCartModel> cartModelList;
     int totalPrice = 0;
+    String thoigian ="";
     FirebaseFirestore firestore;
     FirebaseAuth auth;
 
@@ -72,11 +73,18 @@ public class MyCartAdapter extends RecyclerView.Adapter<MyCartAdapter.ViewHolder
                         });
             }
         });
+
         //pass số lượng to My Cart Fragment
         totalPrice = totalPrice + cartModelList.get(position).getTotalPrice();
         Intent intent = new Intent("MyTotalAmount");
         intent.putExtra("totalAmount", totalPrice);
         LocalBroadcastManager.getInstance(context).sendBroadcast(intent);
+        //
+        thoigian = cartModelList.get(position).getCurrentTime();
+        Intent intentThoiGian = new Intent("ThoiGian");
+        intentThoiGian.putExtra("ThoiGianMua", thoigian);
+        LocalBroadcastManager.getInstance(context).sendBroadcast(intentThoiGian);
+
 
     }
 

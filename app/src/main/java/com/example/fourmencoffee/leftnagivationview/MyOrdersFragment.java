@@ -1,66 +1,129 @@
 package com.example.fourmencoffee.leftnagivationview;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.text.Layout;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.fourmencoffee.R;
+import com.example.fourmencoffee.activity.QLHDActivity;
+import com.example.fourmencoffee.adapters.MyCartAdapter;
+import com.example.fourmencoffee.adapters.MyOrderedAdapter;
+import com.example.fourmencoffee.adapters.QLHD_Da_XuLy_Adapter;
+import com.example.fourmencoffee.adapters.QLHD_Dang_XuLy_Adapter;
+import com.example.fourmencoffee.model.MyCartModel;
+import com.example.fourmencoffee.model.MyOrderedModel;
+import com.example.fourmencoffee.model.QLHD_Da_Xu_Ly_Model;
+import com.example.fourmencoffee.model.QLHD_Dang_Xu_Ly_Model;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentChange;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.QuerySnapshot;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link MyOrdersFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.util.ArrayList;
+import java.util.List;
+
+
 public class MyOrdersFragment extends Fragment {
+    RecyclerView recyclerView;
+    MyOrderedAdapter myOrderedAdapter;
+    List<MyOrderedModel> orderedModelList;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    FirebaseFirestore db;
+    FirebaseAuth auth;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    TextView overTotalAmount, banchuamuagica;
+    ImageView myorderimg;
 
-    public MyOrdersFragment() {
-        // Required empty public constructor
-    }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment MyOrdersFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static MyOrdersFragment newInstance(String param1, String param2) {
-        MyOrdersFragment fragment = new MyOrdersFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_my_orders, container, false);
+        View root = inflater.inflate(R.layout.fragment_my_orders, container, false);
+
+
+        overTotalAmount = root.findViewById(R.id.textView3);
+        LocalBroadcastManager.getInstance(getActivity()).
+                registerReceiver(mMessageReceiver,new IntentFilter("MyTotalAmount"));
+        //
+        db = FirebaseFirestore.getInstance();
+        auth = FirebaseAuth.getInstance();
+        recyclerView = root.findViewById(R.id.recycle_view_order);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+
+        orderedModelList = new ArrayList<>();
+        myOrderedAdapter = new MyOrderedAdapter(getActivity(),orderedModelList);
+        recyclerView.setAdapter(myOrderedAdapter);
+
+        {
+            db.collection("DonHangCuaUserDaXuLy").document(auth.
+                            getCurrentUser().getUid()).collection("CurrentUser")
+                    .get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                        @Override
+                        public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                            if (task.isSuccessful())
+                            {
+                                for (DocumentSnapshot documentSnapshot: task.getResult().getDocuments()){
+                                    String documentId = documentSnapshot.getId();
+                                    MyOrderedModel orderedModel = documentSnapshot.toObject(MyOrderedModel.class);
+                                    orderedModel.setDocumentId(documentId);
+                                    orderedModelList.add(orderedModel);
+                                    myOrderedAdapter.notifyDataSetChanged();
+                                    recyclerView.setVisibility(View.VISIBLE);
+                                }
+                            }
+                        }
+                    });
+
+        }
+
+
+
+
+
+
+
+        return root;
+
+
+
+
     }
+
+
+
+
+    public BroadcastReceiver mMessageReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            int totalBill = intent.getIntExtra("totalAmount",0);
+            overTotalAmount.setText("Tổng hoá đơn: "+totalBill+"đ");
+        }
+    };
+
 }

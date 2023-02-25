@@ -37,31 +37,35 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <ImageView
-                android:layout_width="70dp"
-                android:layout_height="30dp"
-                android:src="@drawable/rating_bar"/>
+            android:orientation="horizontal"
+            android:gravity="end"
+            android:layout_marginBottom="5dp">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/rec_rating"
                 android:text="5.0"
+                android:layout_marginTop="5dp"/>
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="20dp"
                 android:layout_marginTop="5dp"
+                android:src="@drawable/star"/>
+
                 />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Tiền"
-                android:layout_marginTop="5dp"
-                android:layout_marginLeft="30dp"
-                android:id="@+id/recommend_price"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="đ"
-                android:layout_marginTop="5dp"
-                android:layout_marginLeft="5dp"/>
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Tiền"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:layout_marginLeft="30dp"-->
+<!--                android:id="@+id/recommend_price"/>-->
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="đ"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:layout_marginLeft="5dp"/>-->
         </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

@@ -130,10 +130,12 @@ implements NavigationView.OnNavigationItemSelectedListener{
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                String title = "";
                 switch (item.getItemId()){
                     case R.id.home_tab:
 //                        viewPager.setCurrentItem(0);
                         openHomeFragment();
+                        title = "Home";
                         navigationView.setCheckedItem(R.id.nav_home);
                         break;
                     case R.id.classify_tab:
@@ -205,14 +207,17 @@ implements NavigationView.OnNavigationItemSelectedListener{
         if (id==R.id.nav_home){
             openHomeFragment();
             bottomNavigationView.getMenu().findItem(R.id.home_tab).setChecked(true);
+
         }
         else if (id == R.id.nav_classify){
             openClassifyFragment();
             bottomNavigationView.getMenu().findItem(R.id.classify_tab).setChecked(true);
+            setTitle("Classify");
         }
         else if (id == R.id.nav_profile){
             openProfileFragment();
             bottomNavigationView.getMenu().findItem(R.id.personal_tab).setChecked(true);
+            setTitle("Profile");
         }
         else if (id == R.id.nav_category){
             openCategoryFragment();
@@ -230,7 +235,7 @@ implements NavigationView.OnNavigationItemSelectedListener{
             openMyCartsFragment();
         }
         else if (id == R.id.nav_log_out){
-            FirebaseAuth.getInstance().signOut();
+            //FirebaseAuth.getInstance().signOut();
             Intent intent = new Intent(MainActivity.this, LoginActivity.class);
             startActivity(intent);
             overridePendingTransition(R.anim.slide_in_right, R.anim.stay);
@@ -266,6 +271,7 @@ implements NavigationView.OnNavigationItemSelectedListener{
     private void openMyOrdersFragment(){
         if (currentFragment != FRAGMENT_MY_ORDERS){
             replaceFragment(new MyOrdersFragment());
+
             currentFragment = FRAGMENT_MY_ORDERS;
         }
     }
@@ -273,6 +279,7 @@ implements NavigationView.OnNavigationItemSelectedListener{
         if (currentFragment != FRAGMENT_MY_CARTS){
             replaceFragment(new MyCartsFragment());
             currentFragment = FRAGMENT_MY_CARTS;
+
         }
     }
     private void openPriceFragment(){

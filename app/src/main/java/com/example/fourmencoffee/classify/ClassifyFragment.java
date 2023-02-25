@@ -68,12 +68,7 @@ public class ClassifyFragment extends Fragment {
         classifyAdapterNgoaiNuoc.startListening();
     }
 
-    @Override
-    public void onStop() {
-        super.onStop();
-        classifyAdapterTrongNuoc.stopListening();
-        classifyAdapterNgoaiNuoc.stopListening();
-    }
+
 
 
 

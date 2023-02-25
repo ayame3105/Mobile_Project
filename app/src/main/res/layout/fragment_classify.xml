@@ -7,6 +7,7 @@
     tools:context=".classify.ClassifyFragment"
     android:id="@+id/classify_fragment"
     android:background="#e3efef">
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -19,6 +20,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="TRONG NƯỚC"
+                android:layout_marginTop="50dp"
                 android:layout_marginLeft="15dp"
                 android:textSize="20dp"
                 android:textStyle="bold"/>
@@ -47,5 +49,8 @@
                 />
         </LinearLayout>
     </ScrollView>
-
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/container_classify"/>
 </RelativeLayout>

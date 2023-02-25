@@ -6,12 +6,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".leftnagivationview.MyCartsFragment">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_my_cart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Giỏ hàng của tôi"
+        android:background="#C5FADA"/>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/contraint1"
-        android:visibility="gone"
-        >
+        android:visibility="gone">
 
         <ImageView
             android:layout_width="wrap_content"

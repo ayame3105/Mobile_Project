@@ -49,15 +49,14 @@ public class RecommendedAdapter extends RecyclerView.Adapter<RecommendedAdapter.
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView;
-        TextView name, description, rating;
-        int price;
+        TextView name, description, rating, price;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             imageView = itemView.findViewById(R.id.rec_img);
             name = itemView.findViewById(R.id.rec_name);
             description = itemView.findViewById(R.id.rec_des);
             rating = itemView.findViewById(R.id.rec_rating);
-
         }
     }
 }

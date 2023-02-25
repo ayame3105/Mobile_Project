@@ -42,7 +42,6 @@ public class RegisterActivity extends AppCompatActivity {
     private void initUi() {
         create_account= findViewById(R.id.button_create_account);
         login_now =findViewById(R.id.login_now);
-        etRegName = findViewById(R.id.tv_register_name);
         etRegEmail = findViewById(R.id.edit_register_email);
         etRegPassword = findViewById(R.id.edit_register_password);
     }
@@ -50,23 +49,22 @@ public class RegisterActivity extends AppCompatActivity {
         login_now.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                  createUser();
-//                Intent intent =new Intent(RegisterActivity.this, LoginActivity.class);
-//                startActivity(intent);
-//                overridePendingTransition(R.anim.slide_in_right, R.anim.stay);
+                Intent intent =new Intent(RegisterActivity.this, LoginActivity.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.stay);
+
             }
         });
         create_account.setOnClickListener(view ->{
             createUser();
 
-            String fullname_db = etRegName.getText().toString().trim();
             String email_db = etRegEmail.getText().toString().trim();
             String password_db = etRegPassword.getText().toString().trim();
 
             rootNode = FirebaseDatabase.getInstance();
             reference = rootNode.getReference("Users");
-            UserHelpClass helpClass = new UserHelpClass(fullname_db, email_db, password_db);
-            reference.child(fullname_db).setValue(helpClass);
+            UserHelpClass helpClass = new UserHelpClass(email_db, password_db);
+
         });
     }
 
@@ -74,13 +72,8 @@ public class RegisterActivity extends AppCompatActivity {
     private void createUser()
     {
         mAuth = FirebaseAuth.getInstance();
-        String fullname = etRegName.getText().toString().trim();
         String email = etRegEmail.getText().toString().trim();
         String password = etRegPassword.getText().toString().trim();
-        if (TextUtils.isEmpty(fullname)){
-            etRegName.setError("Tên không được để trống!");
-            etRegName.requestFocus();
-        }else
         {
             if (TextUtils.isEmpty(email)) {
                 etRegEmail.setError("Email không được để trống!");
@@ -96,15 +89,15 @@ public class RegisterActivity extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()) {
                                         // Sign in success, update UI with the signed-in user's information Signed up successfully/Authentication failed.
-                                        Toast.makeText(RegisterActivity.this, "Đăng nhập thành công.",
+                                        Toast.makeText(RegisterActivity.this, "Tạo tài khoản thành công.",
                                                 Toast.LENGTH_SHORT).show();
-                                        Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
+                                        Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
                                         startActivity(intent);
                                         overridePendingTransition(R.anim.slide_in_right, R.anim.stay);
                                         finishAffinity();
                                     } else {
 
-                                        Toast.makeText(RegisterActivity.this, "Đăng nhập thất bại.",
+                                        Toast.makeText(RegisterActivity.this, "Tạo tài khoản thất bại.",
                                                 Toast.LENGTH_SHORT).show();
                                     }
                                 }
