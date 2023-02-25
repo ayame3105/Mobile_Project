@@ -30,6 +30,7 @@
                 android:id="@+id/view_name"
                 android:text="Name"
                 android:textSize="20dp"
+                android:textColor="@color/black"
                 android:textStyle="bold"
                 android:singleLine="true"
                 android:maxLines="2"/>
@@ -67,6 +68,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Money"
+                    android:textColor="@color/red"
                     android:layout_gravity="center"
                     android:layout_marginTop="5dp"
                     android:textSize="20dp"

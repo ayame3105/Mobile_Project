@@ -7,12 +7,9 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link PriceFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class PriceFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
@@ -51,6 +48,22 @@ public class PriceFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_price, container, false);
+        View view = inflater.inflate(R.layout.fragment_price, container, false);
+        WebView myWebView = (WebView) view.findViewById(R.id.webview);
+        myWebView.loadUrl("https://giacaphe.com/gia-ca-phe-noi-dia/");
+
+
+
+
+        return view;
+
+
+
+
+
+
+
+
+
     }
 }

@@ -16,9 +16,9 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/banner_shop"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/banner_shop"
         android:supportsRtl="true"
         android:theme="@style/Theme.FourMenCoffee"
         tools:targetApi="31">
@@ -60,11 +60,14 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".activity.QLHDActivity"
+            android:name=".activity.QLHDDaXuLyActivity"
             android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
+
+        </activity>
+        <activity
+            android:name=".activity.QLHDChoXuLyActivity"
+            android:exported="false">
+
         </activity>
         <activity
             android:name=".activity.AdminActivity"
@@ -102,7 +105,9 @@
             android:exported="false" />
         <activity
             android:name=".activity.MainActivity"
-            android:exported="false"></activity>
+            android:exported="false">
+
+        </activity>
         <activity
             android:name=".activity.RegisterActivity"
             android:exported="false" />

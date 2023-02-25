@@ -7,40 +7,25 @@ import android.content.IntentFilter;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.text.Layout;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.fourmencoffee.R;
-import com.example.fourmencoffee.activity.QLHDActivity;
-import com.example.fourmencoffee.adapters.MyCartAdapter;
 import com.example.fourmencoffee.adapters.MyOrderedAdapter;
-import com.example.fourmencoffee.adapters.QLHD_Da_XuLy_Adapter;
-import com.example.fourmencoffee.adapters.QLHD_Dang_XuLy_Adapter;
-import com.example.fourmencoffee.model.MyCartModel;
 import com.example.fourmencoffee.model.MyOrderedModel;
-import com.example.fourmencoffee.model.QLHD_Da_Xu_Ly_Model;
-import com.example.fourmencoffee.model.QLHD_Dang_Xu_Ly_Model;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;

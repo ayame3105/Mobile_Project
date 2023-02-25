@@ -39,7 +39,6 @@ public class LoginActivity extends AppCompatActivity
         admin_button =  findViewById(R.id.admin_button);
 
         hello =  findViewById(R.id.FirstPart1);
-        wel = findViewById(R.id.FirstPart2);
         fb =  findViewById(R.id.fb_icon);
         gg =  findViewById(R.id.gg_icon);
         em =  findViewById(R.id.email);
@@ -54,7 +53,6 @@ public class LoginActivity extends AppCompatActivity
 
         /*Animation*/
         hello.setTranslationX(300);
-        wel.setTranslationX(300);
         gg.setTranslationX(300);
         fb.setTranslationX(300);
         login_button.setTranslationX(300);
@@ -73,7 +71,7 @@ public class LoginActivity extends AppCompatActivity
 
         login_button.animate().translationX(0).setDuration(700).setStartDelay(0);
         hello.animate().translationX(0).setDuration(700).setStartDelay(0);
-        wel.animate().translationX(0).setDuration(700).setStartDelay(0);
+
         em.animate().translationX(0).setDuration(700).setStartDelay(0);
         hint_em.animate().translationX(0).setDuration(700).setStartDelay(0);
         pw.animate().translationX(0).setDuration(700).setStartDelay(0);

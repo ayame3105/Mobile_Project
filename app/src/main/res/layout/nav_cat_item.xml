@@ -34,6 +34,7 @@
                 android:id="@+id/nav_cat_name"
                 android:text="Name"
                 android:textSize="24dp"
+                android:textColor="@color/black"
                 android:textStyle="bold"/>
             <TextView
                 android:layout_width="wrap_content"
@@ -52,27 +53,28 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
                     android:text="Discount"
-                    android:textSize="24dp"
-                    android:textStyle="bold"/>
+                    android:textSize="20dp"
+                    />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/nav_cat_discount"
                     android:text="20% off"
-                    android:textSize="24dp"
+                    android:textSize="20dp"
                     android:layout_marginLeft="10dp"
-                    android:textStyle="bold"/>
+                   />
+                <ImageView
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_baseline_arrow_forward_ios_24"
+                    android:layout_gravity="end"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="10dp"/>
             </LinearLayout>
 
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:src="@drawable/ic_baseline_arrow_forward_ios_24"
-                android:layout_gravity="end"
-                android:layout_marginBottom="10dp"
-                android:layout_marginRight="10dp"/>
+
 
         </LinearLayout>
     </LinearLayout>
