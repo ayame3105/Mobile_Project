@@ -69,8 +69,11 @@ hoàn thiện và chỉnh chu hơn như sau:
 
 **V. Tài liệu tham khảo**
 
-- Android Tuturial: *https://developer.android.com/guide?hl=vi*
+- Android Document: *https://developer.android.com/guide?hl=vi*
 - Fix bugs: Stackoverflow *https://stackoverflow.com/*
+- FirebaseUI for Realtime Database: *https://firebaseopensource.com/projects/firebase/firebaseui-android/database/readme/*
+- FirebaseUI for Cloud Firestore: *https://firebaseopensource.com/projects/firebase/firebaseui-android/firestore/readme/*
+
 
 ![](https://github.com/ayame3105/Mobile_Project/blob/34026d31fb3b583fad4006935d792edfe21359fb/img/gamer.gif)
 
