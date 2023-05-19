@@ -34,6 +34,7 @@ Cơ sở dữ liệu: Firebase
 - Đặt hàng
 - Thông tin mua hàng
 - Tin tức
+
 **2. Admin**
 - Đăng nhập
 - Xem thông tin sản phẩm
