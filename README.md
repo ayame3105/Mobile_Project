@@ -1,5 +1,5 @@
 # Coffee Application
-**I. Đặt vần đề** 
+**I. Hiện trạng** 
 
   Hiện nay, thiết bị di động ngày càng được phổ biến, dễ để thấy hầu hết mọi lứa
 tuổi tại Việt Nam đều có thể sở hữu, sử dụng smartphone để liên lạc, trao đổi thông
@@ -21,7 +21,7 @@ IDE: Android Studio
 
 Cơ sở dữ liệu: Firebase
 
-**II. Danh sách Actor** 
+**II. Danh sách Actors** 
 
 **1. Khách hàng**
 - Đăng nhập
@@ -46,11 +46,16 @@ Cơ sở dữ liệu: Firebase
 **III. Một số hình ảnh sản phẩm** 
 
 ![](https://github.com/ayame3105/Mobile_Project/blob/1ba81998cd3e227a9a06e3e530f14d1b9cecb962/img/1.JPG)
+![](https://github.com/ayame3105/Mobile_Project/blob/1ba81998cd3e227a9a06e3e530f14d1b9cecb962/img/2.JPG)
 ![](https://github.com/ayame3105/Mobile_Project/blob/1ba81998cd3e227a9a06e3e530f14d1b9cecb962/img/3.JPG)
 ![](https://github.com/ayame3105/Mobile_Project/blob/1ba81998cd3e227a9a06e3e530f14d1b9cecb962/img/4.JPG)
 ![](https://github.com/ayame3105/Mobile_Project/blob/1ba81998cd3e227a9a06e3e530f14d1b9cecb962/img/5.JPG)
-![](https://github.com/ayame3105/Mobile_Project/blob/1ba81998cd3e227a9a06e3e530f14d1b9cecb962/img/11.JPG)
+![](https://github.com/ayame3105/Mobile_Project/blob/1ba81998cd3e227a9a06e3e530f14d1b9cecb962/img/6.JPG)
+![](https://github.com/ayame3105/Mobile_Project/blob/1ba81998cd3e227a9a06e3e530f14d1b9cecb962/img/7.JPG)
+![](https://github.com/ayame3105/Mobile_Project/blob/1ba81998cd3e227a9a06e3e530f14d1b9cecb962/img/8.JPG)
 ![](https://github.com/ayame3105/Mobile_Project/blob/1ba81998cd3e227a9a06e3e530f14d1b9cecb962/img/9.JPG)
+![](https://github.com/ayame3105/Mobile_Project/blob/1ba81998cd3e227a9a06e3e530f14d1b9cecb962/img/10.JPG)
+![](https://github.com/ayame3105/Mobile_Project/blob/1ba81998cd3e227a9a06e3e530f14d1b9cecb962/img/11.JPG)
 
 **IV. Kết quả đạt được**
 
